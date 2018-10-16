@@ -1,28 +1,29 @@
 /* 
-    In this module, we are creating an ArticleSchema class constructor
-    From the schema constructor, we are creating a new var for export
-    Taking the mongoose model method, we create a new model based on the schema
-    var Article is being exported, 
+    This module contains:
+        a variable referencing the mongoose Schema
+        a constructor for a new ArticleSchema class
+        a variable for export containing a mongoose method that creates a mongo model out of the Article Schema
 */
 
-var mongoose= require ('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
     title: {
-        String,
-        require: true
+      type: String,
+      required: true
     },
-    link:{
-        type: String,
-        require: true
+    link: {
+      type: String,
+      required: true
     },
     note: {
-        type:Schema.Types.ObjectId,
-        ref: 'Note'
+      type: Schema.Types.ObjectId,
+      ref: "Note"
     }
-});
-
-var Article = mongoose.model('Article', ArticleSchema);
-
-module.exports = Article;
+  });
+  
+  var Article = mongoose.model("Article", ArticleSchema);
+  
+  module.exports = Article;
+  

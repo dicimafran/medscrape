@@ -1,7 +1,7 @@
-/*
-    In this module, we're using the mongoose schema.
-    We are creating a new Class called NoteSchema.
-    Using the new NoteSchema object, we create a new model and pass it into the mongoose model method.
+/* 
+    This module contains:
+         a constructor for a new NoteSchema class
+         a variable for export containing a mongoose method that creates a mongo model out of the Note Schema
 */
 
 var mongoose = require("mongoose");
@@ -15,3 +15,4 @@ var NoteSchema = new Schema({
 var Note = mongoose.model("Note", NoteSchema);
 
 module.exports = Note;
+
